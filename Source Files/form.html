@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LoL Informatics - form</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/formValidation.min.css" rel="stylesheet">
+    <link href="css/morris.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        h1 {
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .nodot {
+            list-style-type: none;
+            font-size: 120%;
+        }
+
+        .pad-below {
+            padding-bottom: 1%;
+        }
+
+        .Pwrap {
+            width: 1500px;
+            margin: 0 auto;
+            border-style: solid;
+            background-color: white;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .tablerowhead {
+            font-weight: bold;
+            color: #d63939;
+        }
+
+        .tablerowheadname {
+            font-weight: bold;
+            color: white;
+        }
+
+        .abilityname {
+            color: #db5220;
+        }
+
+        .role {
+            font-weight: bold;
+        }
+
+        .archetype {
+            font-weight: normal;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body background="images/background.jpg">
+    <!-- YOUR CONTENT HERE -->
+    <div class="Pwrap" style="background-color:powderblue;">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <a class="navbar-brand" href="#">LoL Informatics</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#AboutUs">About Us</a></li>
+                        <li><a href="#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#ChampionSpotlight">Champion Spotlight</a></li>
+                        <li><a href="#Champions">Champions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/formValidation.min.js"></script>
+        <script src="js/framework/bootstrap.min.js"></script>
+        <script src="js/raphael-min.js"></script>
+        <script src="js/morris.min.js"></script>
+
+
+
+
+
+
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="SummonerName" class="col-sm-2 control-label">Summoner Name</label>
+                <div class="col-sm-10"><input type="summoner" class="form-control" id="summonername" name="summonername" placeholder="Summoner Name"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1" class="col-sm-2 control-label">Email address</label>
+                <div class="col-sm-10"><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10"><input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></div>
+            </div>
+
+<div class="form-group">
+  <label for="rank" class="col-sm-2 control-label">Rank</label>
+  <div class="col-sm-10">
+            <select class="form-control">
+              <option>Unranked</option>
+  <option>Bronze</option>
+  <option>Silver</option>
+  <option>Gold</option>
+  <option>Platinum</option>
+  <option>Diamond</option>
+  <option>Master</option>
+  <option>Challenger</option>
+</select>
+</div>
+</div>
+
+            <label for="PreferredRoles" class="col-sm-2 control-label">Preferred Roles</label>
+            <div class="checkbox">
+
+
+                <div class="col-sm-10">
+                    <label class="checkbox-inline">
+
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> Top
+        </label>
+
+                    <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox2" value="option2"> Jungle
+        </label>
+
+                    <label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox3" value="option3"> Mid
+        </label>
+
+                    <label class="checkbox-inline">
+  <input type="checkbox" id="inlineCheckbox4" value="option3"> Bot
+</label>
+
+                    <label class="checkbox-inline">
+<input type="checkbox" id="inlineCheckbox5" value="option3"> Support
+</label>
+
+                </div>
+            </div>
+
+
+
+
+            <label for="receiveemails" class="col-sm-2 control-label">Receive Emails</label>
+            <div class="radio">
+
+
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+
+          <input type="radio" id="inlineRadio1" value="optionx1"> Yes
+        </label>
+
+                    <label class="radio-inline">
+          <input type="radio" id="inlineRadio2" value="optionx2"> No
+        </label>
+
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="textarea" class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10"><textarea class="form-control" rows="3" placeholder="Your favourite champions"></textarea></div>
+            </div>
+
+
+            <div class="form-group">
+<div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+
+        </form>
+
+
+
+
+
+    </div>
+</body>
+
+</html>
