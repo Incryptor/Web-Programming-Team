@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,8 +30,9 @@
 
         .Pwrap {
             width: 1500px;
+            height: 950px; /* max 1000 height or it will look bad, lowest is 550 */
             margin: 0 auto;
-            border-style: solid;
+            border-style: solid ;
             background-color: white;
             padding-top: 20px;
             padding-right: 20px;
@@ -101,267 +101,212 @@
             </div>
         </nav>
 
-
-
-<!-- Habibs code for from -->
-        <form id="demoform" class="form-horizontal">
+<div class="container">
+        <form id="demoform" class="form-horizontal" method="post">
 
           <div class="form-group">
             <label for="summoner" class="col-sm-2 control-label">Summoner Name</label>
             <div class="col-sm-5">
-              <input type="summoner" class="form-control" id="summoner" name="summoner" placeholder="Summoner Name">
+              <input type="username" class="form-control" id="summoner" name="summoner" min="4" max="8" placeholder="Summoner Name">
             </div>
           </div>
 
-
-
         <div class="form-group">
-          <label for="email" class="col-sm-2 control-label">Email</label>
+          <label for="email" class="col-sm-2 control-label">Email Address</label>
           <div class="col-sm-5">
             <input type="email" class="form-control" id="email" name="email" placeholder="Email">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="password" class="col-sm-2 control-label">Password</label>
+          <label for="passwrd" class="col-sm-2 control-label">Password</label>
           <div class="col-sm-5">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <input type="password" class="form-control" id="passwrd" name="passwrd" placeholder="Password">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="Dropdown" class="col-sm-2 control-label" >Drop Down</label>
+          <label for="Dropdown" class="col-sm-2 control-label" >Rank</label>
           <div class="col-sm-5">
-              <select class="form-control" type="Dropdown" class="form-control" id="Dropdown" name="Dropdown" placeholder="Dropdown">
+              <select class="form-control" type="Dropdown" id="Dropdown" name="Dropdown">
                 <option value="" selected disabled>Please select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Unranked</option>
+                <option>Bronze</option>
+                <option>Silver</option>
+                <option>Gold</option>
+                <option>Platinum</option>
+                <option>Diamond</option>
+                <option>Master</option>
+                <option>Challenger</option>
               </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="checkBox" class="col-sm-2 control-label">Check Box</label>
+          <label for="checkbox[]" class="col-sm-2 control-label">Preferred Roles</label>
           <div class="col-sm-5">
-            <div class="checkbox" >
+            <div class="checkbox">
               <label>
-                <input name="checkbox[]" type="checkbox"> Remember me
+                <input type="checkbox" id="checkbox[]" name="checkbox[]" value="top">Top&nbsp
               </label>
               <label >
-                <input name="checkbox[]" type="checkbox"> Checking one two three
+                <input type="checkbox" id="checkbox[]" name="checkbox[]" value="jungle">Jungle&nbsp
+              </label>
+              <label >
+                <input type="checkbox" id="checkbox[]" name="checkbox[]" value="mid">Mid&nbsp
+              </label>
+              <label >
+                <input type="checkbox" id="checkbox[]" name="checkbox[]" value="bot">Bot&nbsp
+              </label>
+              <label >
+                <input type="checkbox" id="checkbox[]" name="checkbox[]" value="support">Support
               </label>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="RadioButton" class="col-sm-2 control-label">Radio BUtttons</label>
+          <label for="availability" class="col-sm-2 control-label">Receive Emails</label>
           <div class="col-sm-5">
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> asdasdffds
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> asdfasdfasdf
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> asdfasdf
-            </label>
+          <div class="radio">
+            <label><input type="radio" id="availability" name="availability" value="yes" /> Yes &nbsp</label>
+            <label><input type="radio" id="availability" name="availability" value="no" /> No</label>
+          </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="TextArea" class="col-sm-2 control-label">Text Area</label>
+          <label for="description" class="col-sm-2 control-label">Description</label>
           <div class="col-sm-5">
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" placeholder="Your favourite champions" rows="3" id="description" name="description"></textarea>
           </div>
         </div>
 
-<!--Jons Code for his form -->
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-5">
-            <button type="submit" class="btn btn-default">Sign in</button>
-          </div>
-        </div>
-
-      </form>
-
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label for="SummonerName" class="col-sm-2 control-label">Summoner Name</label>
-                <div class="col-sm-10"><input type="summoner" class="form-control" id="summonername" name="summonername" placeholder="Summoner Name"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="col-sm-2 control-label">Email address</label>
-                <div class="col-sm-10"><input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"></div>
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10"><input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></div>
-            </div>
-
-<div class="form-group">
-  <label for="rank" class="col-sm-2 control-label">Rank</label>
-  <div class="col-sm-10">
-            <select class="form-control">
-              <option>Unranked</option>
-  <option>Bronze</option>
-  <option>Silver</option>
-  <option>Gold</option>
-  <option>Platinum</option>
-  <option>Diamond</option>
-  <option>Master</option>
-  <option>Challenger</option>
-</select>
-</div>
-</div>
-
-            <label for="PreferredRoles" class="col-sm-2 control-label">Preferred Roles</label>
-            <div class="checkbox">
-
-
-                <div class="col-sm-10">
-                    <label class="checkbox-inline">
-
-          <input type="checkbox" id="inlineCheckbox1" value="option1"> Top
-        </label>
-
-                    <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox2" value="option2"> Jungle
-        </label>
-
-                    <label class="checkbox-inline">
-          <input type="checkbox" id="inlineCheckbox3" value="option3"> Mid
-        </label>
-
-                    <label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox4" value="option3"> Bot
-</label>
-
-                    <label class="checkbox-inline">
-<input type="checkbox" id="inlineCheckbox5" value="option3"> Support
-</label>
-
-                </div>
-            </div>
-
-
-
-
-            <label for="receiveemails" class="col-sm-2 control-label">Receive Emails</label>
-            <div class="radio">
-
-
-                <div class="col-sm-10">
-                    <label class="radio-inline">
-
-          <input type="radio" id="inlineRadio1" value="optionx1"> Yes
-        </label>
-
-                    <label class="radio-inline">
-          <input type="radio" id="inlineRadio2" value="optionx2"> No
-        </label>
-
-
-
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <label for="textarea" class="col-sm-2 control-label">Description</label>
-                <div class="col-sm-10"><textarea class="form-control" rows="3" placeholder="Your favourite champions"></textarea></div>
-            </div>
-
-
-            <div class="form-group">
-<div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Submit</button>
           </div>
         </div>
-
-        </form>
-
-
-
+      </div>
+    </form>
+</div>
 
 
-    </div>
-    <script>
-    $(document).ready(function() {
-        $('#demoform').formValidation({
-            framework: 'bootstrap',
-            fields: {
-              summoner: {
-                validators: {
-                  notEmpty: {
-                    message: 'Please enter a summoner name'
-                  }
-                }
-              },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Email Not Valid'
-                        }
-                    }
-                },
-                password: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The password is required'
-                        }
-                    }
-                },
-                Dropdown: {
-                    validators: {
-                        notEmpty: {
-                            message: 'A Selection is requrired'
-                        }
-                    }
-                },
-                'checkbox[]': {
-                    validators: {
-                        notEmpty: {
-                            message: 'A Selection is required'
-                        }
-                    }
-                },
-            }
-        });
-        Morris.Line({
-      element: 'linechart',
-      data: [
-        { y: '2006', a: 420, b: 69 },
-        { y: '2007', a: 75,  b: 65 },
-        { y: '2008', a: 50,  b: 40 },
-        { y: '2009', a: 75,  b: 65 },
-        { y: '2010', a: 50,  b: 40 },
-        { y: '2011', a: 75,  b: 65 },
-        { y: '2012', a: 100, b: 90 }
-      ],
-      xkey: 'y',
-      ykeys: ['a', 'b'],
-      labels: ['Series A', 'Series B']
-    });
-    });
-    </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/formValidation.min.js"></script>
+<script src="js/framework/bootstrap.min.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/morris.min.js"></script>
 
+<script>
+//validation script
+$(document).ready(function())
+{
+  $('#demoform').formValidation(
+  {
+    framework: 'bootstrap',
+    icon:{
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },
+    fields:{
+      summoner:{
+        validators:{
+          notEmpty:{
+            message: 'Please enter your summoner name, it is required'
+          },
+          stringLength:{
+            min:4,
+            max:10,
+            message: 'The name must be more than 4 and less than 10 characters long'
+          },
+          regexp:{
+            regexp: /^[a-zA-Z0-9_]+$/,
+            message: 'The name can only consist of alphabetical, number and underscore'
+          }
+        }
+      },
+    email:{
+      validators:{
+        notEmpty:{
+          message: 'Email address is requierd'
+        },
+        emailAddress:{
+          message: 'The input is not a valid email address'
+        }
+      }
+    },
+    passwrd:{
+      validators:{
+        notEmpty:{
+          message: 'The password is required'
+        },
+        different:{
+          field: 'summoner',
+          message: 'The password cannot be the same as username'
+        },
+        stringLength:{
+          min:6,
+          max:18,
+          message: 'The password must be more than 6 characterse long and less than 18 characters long'
+        }
+      }
+    },
+    Dropdown:{
+      validators:{
+        notEmpty:{
+          message: 'Rank is required'
+        }
+      }
+    },
+    'checkbox[]':{
+        validators:{
+          notEmpty:{
+            message: 'Prefered Roles is required'
+        }
+      }
+    },
+    availability:{
+        validators:{
+          notEmpty:{
+            message: 'The Recieve Emails option is requried'
+        }
+      }
+    },
+    description:{
+        validators:{
+          notEmpty:{
+            message: 'The Description text filed is required'
+          }
+        }
+      }
+    }
+  });
+});
 
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="js/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/formValidation.min.js"></script>
-            <script src="js/framework/bootstrap.min.js"></script>
-            <script src="js/raphael-min.js"></script>
-            <script src="js/morris.min.js"></script>
+          Morris.Line({
+            element: 'linechart',
+            lineColors: ['#bf5a16', '#31A113'],
+            data: [
+              { y: '2006', a: 10, b: 15 },
+              { y: '2007', a: 25,  b: 35 },
+              { y: '2008', a: 50,  b: 40 },
+              { y: '2009', a: 75,  b: 65 },
+              { y: '2010', a: 50,  b: 40 },
+              { y: '2011', a: 75,  b: 65 },
+              { y: '2012', a: 100, b: 90 }
+            ],
+            xkey: 'y',
+            ykeys: ['a', 'b'],
+            labels: ['Series A', 'Series B']
+          });
+      });
+
+</script>
+
 </body>
-
 </html>
