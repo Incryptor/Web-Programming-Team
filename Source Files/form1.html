@@ -107,7 +107,7 @@
           <div class="form-group">
             <label for="summoner" class="col-sm-2 control-label">Summoner Name</label>
             <div class="col-sm-5">
-              <input type="username" class="form-control" id="summoner" name="summoner" min="4" max="8" placeholder="Summoner Name">
+              <input type="text" class="form-control" id="summoner" name="summoner" placeholder="Summoner Name">
             </div>
           </div>
 
@@ -201,111 +201,90 @@
 <script src="js/raphael-min.js"></script>
 <script src="js/morris.min.js"></script>
 
-<script>
+?<script>
 //validation script
-$(document).ready(function())
-{
-  $('#demoform').formValidation(
-  {
-    framework: 'bootstrap',
-    icon:{
-      valid: 'glyphicon glyphicon-ok',
-      invalid: 'glyphicon glyphicon-remove',
-      validating: 'glyphicon glyphicon-refresh'
-    },
-    fields:{
-      summoner:{
-        validators:{
-          notEmpty:{
-            message: 'Please enter your summoner name, it is required'
+$(document).ready(function() {
+    $('#demoform').formValidation({
+        framework: 'bootstrap',
+        icon:{
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields:{
+          summoner:{
+            validators:{
+              notEmpty:{
+                message: 'Please enter your summoner name, it is required'
+              },
+              stringLength:{
+                min:4,
+                max:10,
+                message: 'The name must be more than 4 and less than 10 characters long'
+              },
+              regexp:{
+                regexp: /^[a-zA-Z0-9_]+$/,
+                message: 'The name can only consist of alphabetical, number and underscore'
+              }
+            }
           },
-          stringLength:{
-            min:4,
-            max:10,
-            message: 'The name must be more than 4 and less than 10 characters long'
-          },
-          regexp:{
-            regexp: /^[a-zA-Z0-9_]+$/,
-            message: 'The name can only consist of alphabetical, number and underscore'
+        email:{
+          validators:{
+            notEmpty:{
+              message: 'Email address is requierd'
+            },
+            emailAddress:{
+              message: 'The input is not a valid email address'
+            }
+          }
+        },
+        passwrd:{
+          validators:{
+            notEmpty:{
+              message: 'The password is required'
+            },
+            different:{
+              field: 'summoner',
+              message: 'The password cannot be the same as username'
+            },
+            stringLength:{
+              min:6,
+              max:18,
+              message: 'The password must be more than 6 characterse long and less than 18 characters long'
+            }
+          }
+        },
+        Dropdown:{
+          validators:{
+            notEmpty:{
+              message: 'Rank is required'
+            }
+          }
+        },
+        'checkbox[]':{
+            validators:{
+              notEmpty:{
+                message: 'Prefered Roles is required'
+            }
+          }
+        },
+        availability:{
+            validators:{
+              notEmpty:{
+                message: 'The Recieve Emails option is requried'
+            }
+          }
+        },
+        description:{
+            validators:{
+              notEmpty:{
+                message: 'The Description text filed is required'
+              }
+            }
           }
         }
-      },
-    email:{
-      validators:{
-        notEmpty:{
-          message: 'Email address is requierd'
-        },
-        emailAddress:{
-          message: 'The input is not a valid email address'
-        }
-      }
-    },
-    passwrd:{
-      validators:{
-        notEmpty:{
-          message: 'The password is required'
-        },
-        different:{
-          field: 'summoner',
-          message: 'The password cannot be the same as username'
-        },
-        stringLength:{
-          min:6,
-          max:18,
-          message: 'The password must be more than 6 characterse long and less than 18 characters long'
-        }
-      }
-    },
-    Dropdown:{
-      validators:{
-        notEmpty:{
-          message: 'Rank is required'
-        }
-      }
-    },
-    'checkbox[]':{
-        validators:{
-          notEmpty:{
-            message: 'Prefered Roles is required'
-        }
-      }
-    },
-    availability:{
-        validators:{
-          notEmpty:{
-            message: 'The Recieve Emails option is requried'
-        }
-      }
-    },
-    description:{
-        validators:{
-          notEmpty:{
-            message: 'The Description text filed is required'
-          }
-        }
-      }
-    }
-  });
+    });
 });
-
-          Morris.Line({
-            element: 'linechart',
-            lineColors: ['#bf5a16', '#31A113'],
-            data: [
-              { y: '2006', a: 10, b: 15 },
-              { y: '2007', a: 25,  b: 35 },
-              { y: '2008', a: 50,  b: 40 },
-              { y: '2009', a: 75,  b: 65 },
-              { y: '2010', a: 50,  b: 40 },
-              { y: '2011', a: 75,  b: 65 },
-              { y: '2012', a: 100, b: 90 }
-            ],
-            xkey: 'y',
-            ykeys: ['a', 'b'],
-            labels: ['Series A', 'Series B']
-          });
-      });
-
 </script>
 
 </body>
