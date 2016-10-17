@@ -1,0 +1,68 @@
+h1 {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.nodot {
+    list-style-type: none;
+    font-size: 120%;
+}
+
+.pad-below {
+    padding-bottom: 1%;
+}
+
+.Pwrap2 {
+    width: 1500px;
+    height: 97vh; /* max 1000 height or it will look bad, lowest is 550 */
+    margin: 0 auto;
+    border-style: solid ;
+    background-color: white;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.Pwrap {
+    width: 1500px;
+    height: 100%; /* max 1000 height or it will look bad, lowest is 550 */
+    margin: 0 auto;
+    border-style: solid ;
+    background-color: white;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.tablerowhead {
+    font-weight: bold;
+    color: #d63939;
+}
+
+.tablerowheadname {
+    font-weight: bold;
+    color: white;
+}
+
+.abilityname {
+    color: #db5220;
+}
+
+.role {
+    font-weight: bold;
+}
+
+.archetype {
+    font-weight: normal;
+}
+body {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;;
+}
+h2 {
+    color: darkgreen;
+    text-align: center;
+    font-size: 1.5em;
+}
