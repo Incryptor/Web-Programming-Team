@@ -41,12 +41,12 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">About Us</a></li>
-                        <li><a href="index.html#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
-                        <li><a href="index.html#ChampionSpotlight">Champion Spotlight</a></li>
-                        <li><a href="index.html#Champions">Champions</a></li>
-                        <li><a href="form.html">Form</a></li>
-                        <li><a href="plots.html">Plots</a>
+                        <li><a href="index.php">About Us</a></li>
+                        <li><a href="index.php#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
+                        <li><a href="index.php#ChampionSpotlight">Champion Spotlight</a></li>
+                        <li><a href="index.php#Champions">Champions</a></li>
+                        <li><a href="form.php">Form</a></li>
+                        <li><a href="plots.php">Plots</a>
                             <li>
                     </ul>
                 </div>
@@ -95,23 +95,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="checkbox[]" class="col-sm-2 control-label">Preferred Roles</label>
+                    <label for="checkbox" class="col-sm-2 control-label">Preferred Roles</label>
                     <div class="col-sm-5">
                         <div class="checkbox">
                             <label>
-                <input type="checkbox" id="checkbox1" name="checkbox[]" value="top">Top&nbsp
+                <input type="checkbox" id="checkbox1" name="checkbox" value="top">Top&nbsp
               </label>
                             <label>
-                <input type="checkbox" id="checkbox2" name="checkbox[]" value="jungle">Jungle&nbsp
+                <input type="checkbox" id="checkbox2" name="checkbox" value="jungle">Jungle&nbsp
               </label>
                             <label>
-                <input type="checkbox" id="checkbox3" name="checkbox[]" value="mid">Mid&nbsp
+                <input type="checkbox" id="checkbox3" name="checkbox" value="mid">Mid&nbsp
               </label>
                             <label>
-                <input type="checkbox" id="checkbox4" name="checkbox[]" value="bot">Bot&nbsp
+                <input type="checkbox" id="checkbox4" name="checkbox" value="bot">Bot&nbsp
               </label>
                             <label>
-                <input type="checkbox" id="checkbox5" name="checkbox[]" value="support">Support
+                <input type="checkbox" id="checkbox5" name="checkbox" value="support">Support
               </label>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                             }
                         }
                     },
-                    'checkbox[]': {
+                    checkbox: {
                         validators: {
                             notEmpty: {
                                 message: 'Prefered Roles is required'

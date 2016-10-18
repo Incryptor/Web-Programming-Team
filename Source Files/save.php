@@ -14,8 +14,8 @@ else {
 }
 
 // Insert sample data into the database
-$sql = $db->prepare("INSERT INTO sample(name, email, password, dropdown, checkbox, " .
-                    "radio, textarea) VALUES (?, ?, ?, ?, ?, ?)");
+$sql = $db->prepare("INSERT INTO sample(summoner, email, passwrd, Dropdown, checkbox, " .
+                    "availability, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 // These should be retrieved from POST variables
 $name = "Jon";
