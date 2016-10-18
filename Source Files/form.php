@@ -41,12 +41,12 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">About Us</a></li>
-                        <li><a href="index.php#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
-                        <li><a href="index.php#ChampionSpotlight">Champion Spotlight</a></li>
-                        <li><a href="index.php#Champions">Champions</a></li>
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="index.html#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
+                        <li><a href="index.html#ChampionSpotlight">Champion Spotlight</a></li>
+                        <li><a href="index.html#Champions">Champions</a></li>
                         <li><a href="form.php">Form</a></li>
-                        <li><a href="plots.php">Plots</a>
+                        <li><a href="plots.html">Plots</a>
                             <li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@
         </nav>
 
         <div class="container">
-            <form id="demoform" class="form-horizontal" method="post">
+            <form id="demoform" class="form-horizontal" method="post" action="form.php">
 
                 <div class="form-group">
                     <label for="summoner" class="col-sm-2 control-label">Summoner Name</label>
