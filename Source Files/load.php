@@ -1,6 +1,5 @@
 <?php
-$db = new mysqli('sofe2800.cboafkun8gnh.us-east-1.rds.amazonaws.com', 'admin', 'swagsofe2800', 'lab');
-
+$db = new mysqli('sofe2800.cboafkun8gnh.us-east-1.rds.amazon.com', 'admin', 'swagsofe2800', 'lab');
 
 // You should see sucess if you can connect
 if($db->connect_errno > 0){
