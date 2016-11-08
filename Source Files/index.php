@@ -46,7 +46,7 @@
                         <li><a href="#ChampionSpotlight">Champion Spotlight</a></li>
                         <li><a href="#Champions">Champions</a></li>
                         <li><a href="form.php">Form</a></li>
-                        <li><a href="plots.html">Plots</a></li>
+                        <li><a href="plots.php">Plots</a></li>
                     </ul>
                 </div>
             </div>
