@@ -132,8 +132,8 @@
                     <label for="availability" class="col-sm-2 control-label">Receive Emails</label>
                     <div class="col-sm-5">
                         <div class="radio">
-                            <label><input type="radio" id="availability1" name="availability" value="yes" /> Yes &nbsp;</label>
-                            <label><input type="radio" id="availability2" name="availability" value="no" /> No</label>
+                            <label><input type="radio" id="availability1" name="availability" value=1 /> Yes &nbsp;</label>
+                            <label><input type="radio" id="availability2" name="availability" value=0 /> No</label>
                         </div>
                     </div>
                 </div>
@@ -254,17 +254,6 @@
     <?php
     $db = new mysqli('localhost', 'root', '', 'lab');
 
-    // TODO You must process the POST data from the form and then set the variables
-    // below to be inserted in the database
-
-    // You should see sucess if you can connect
-    if($db->connect_errno > 0){
-        echo "ERROR";
-        die('Unable to connect to database [' . $db->connect_error . ']');
-    }
-    else {
-      echo "SUCCESS";
-    }
 
     // Insert sample data into the database
     $sql = $db->prepare("INSERT INTO sample(summoner, email, passwrd, Dropdown, checkbox, " .

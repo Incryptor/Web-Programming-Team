@@ -255,10 +255,15 @@
 
 
         // Query to return data from your database
-        $result = $db->query("SELECT * FROM sample");
+        $result = $db->query("SELECT * FROM sample;");
+        $top10 = $db->query("SELECT * FROM sample LIMIT 10;");
 
         // check if the query succeeded
         if (!$result) {
+            die('There was an error running the query[' . $db->error . ']');
+        }
+
+        if (!$top10) {
             die('There was an error running the query[' . $db->error . ']');
         }
 
@@ -268,7 +273,7 @@
 
         // Display the results of the query for each row
         echo "<table class=\"table table-hover\"><tr class=\"tablerowhead\"><td>Summoner</td><td>Rank</td><td>Preferred Roles</td><td>Preferred Champions</td></th>";
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $top10->fetch_assoc()) {
             echo '<tr><td>'.$row['summoner'].'</td><td>'.$row['Dropdown'].'</td><td>'.$row['checkbox'].'</td><td>'.$row['description'].'</td></tr>';
         }
         echo "</table>";
@@ -277,6 +282,7 @@
 
         // Close the database connection
         $result->free();
+        $top10->free();
         $db->close();
 
          ?>
