@@ -1,5 +1,6 @@
 <?php
-$db = new mysqli('sofe2800.cboafkun8gnh.us-east-1.rds.amazon.com', 'admin', 'swagsofe2800', 'lab');
+$db = new mysqli('localhost', 'root', '', 'lab');
+// CODE FOR WITH AMAZON $db = new mysqli('sofe2800.cboafkun8gnh.us-east-1.rds.amazon.com', 'admin', 'swagsofe2800', 'lab');
 
 // TODO You must process the POST data from the form and then set the variables
 // below to be inserted in the database
@@ -18,7 +19,7 @@ $sql = $db->prepare("INSERT INTO sample(summoner, email, passwrd, Dropdown, chec
                     "availability, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 // These should be retrieved from POST variables
-$name = "Jon";
+$name = "emeerte";
 $email = "jon@test.com";
 $insecure_pass = "test123"; // This password needs to be securely hashed
 $dropdown = "Option 1"; // This is one of the dropdown selection options

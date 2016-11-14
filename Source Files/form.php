@@ -109,19 +109,19 @@
                     <div class="col-sm-5">
                         <div class="checkbox">
                             <label>
-                <input type="checkbox" id="checkbox1" name="checkbox" value="top">Top&nbsp
+                <input type="checkbox" id="checkbox1" name="checkbox[]" value="top">Top&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox2" name="checkbox" value="jungle">Jungle&nbsp
+                <input type="checkbox" id="checkbox2" name="checkbox[]" value="jungle">Jungle&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox3" name="checkbox" value="mid">Mid&nbsp
+                <input type="checkbox" id="checkbox3" name="checkbox[]" value="mid">Mid&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox4" name="checkbox" value="bot">Bot&nbsp
+                <input type="checkbox" id="checkbox4" name="checkbox[]" value="bot">Bot&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox5" name="checkbox" value="support">Support
+                <input type="checkbox" id="checkbox5" name="checkbox[]" value="support">Support
               </label>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                     <label for="availability" class="col-sm-2 control-label">Receive Emails</label>
                     <div class="col-sm-5">
                         <div class="radio">
-                            <label><input type="radio" id="availability1" name="availability" value="yes" /> Yes &nbsp</label>
+                            <label><input type="radio" id="availability1" name="availability" value="yes" /> Yes &nbsp;</label>
                             <label><input type="radio" id="availability2" name="availability" value="no" /> No</label>
                         </div>
                     </div>
@@ -249,6 +249,60 @@
             });
         });
     </script>
+
+    <?php
+    $db = new mysqli('localhost', 'root', '', 'lab');
+
+    // TODO You must process the POST data from the form and then set the variables
+    // below to be inserted in the database
+
+    // You should see sucess if you can connect
+    if($db->connect_errno > 0){
+        echo "ERROR";
+        die('Unable to connect to database [' . $db->connect_error . ']');
+    }
+    else {
+      echo "SUCCESS";
+    }
+
+    // Insert sample data into the database
+    $sql = $db->prepare("INSERT INTO sample(summoner, email, passwrd, Dropdown, checkbox, " .
+                        "availability, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$checkboxstring = "";
+foreach ($POST_["checkbox"] as $key => $role) {
+   if ($key =! (count($POST_["checkbox"])-1)) {
+     $checkboxstring = $checkboxstring.$role.", ";
+   } else {
+      $checkboxstring = $checkboxstring.$role;
+   }
+
+ };
+
+    // These should be retrieved from POST variables
+    $name = $_POST["summoner"];
+    $email = $_POST["email"];
+    $insecure_pass = $_POST["passwrd"]; // This password needs to be securely hashed
+    $dropdown = $_POST["Dropdown"]; // This is one of the dropdown selection options
+    $checkbox = $POST_["checkbox"];  // This is a boolean value 0 or 1
+    $radio = $_POST["availability"];   // This is an integer value
+    $message = $_POST["description"]; // The text area content
+
+    // Securely hash the password
+    $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
+
+    // Bind the parameters to the SQL query above, s is a string i is an integer
+    $sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
+
+    // Execute the query, inserting the data
+    $sql->execute();
+
+    // Close the connection
+    $sql->close();
+    $db->close();
+
+    ?>
+
+
 
 </body>
 
