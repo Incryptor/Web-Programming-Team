@@ -55,6 +55,7 @@
                         <li><a href="index.php#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
                         <li><a href="index.php#ChampionSpotlight">Champion Spotlight</a></li>
                         <li><a href="index.php#Champions">Champions</a></li>
+                        <li><a href="index.php#Users">Users</a></li>
                         <li><a href="form.php">Form</a></li>
                         <li><a href="plots.php">Plots</a>
                             <li>
@@ -178,70 +179,70 @@
                     summoner: {
                         validators: {
                             notEmpty: {
-                                message: 'Please enter your summoner name, it is required'
+                                message: 'Please enter your summoner name.'
                             },
                             stringLength: {
                                 min: 4,
-                                max: 10,
-                                message: 'The name must be more than 4 and less than 10 characters long'
+                                max: 19,
+                                message: 'Your name must be more than 3 and less than 20 characters long.'
                             },
                             regexp: {
                                 regexp: /^[a-zA-Z0-9_]+$/,
-                                message: 'The name can only consist of alphabetical, number and underscore'
+                                message: 'The name can only consist of alphabetical and numberic characters, as well as the underscore.'
                             }
                         }
                     },
                     email: {
                         validators: {
                             notEmpty: {
-                                message: 'Email address is requierd'
+                                message: 'Your email address is requierd.'
                             },
                             emailAddress: {
-                                message: 'The input is not a valid email address'
+                                message: 'The input is not a valid email address.'
                             }
                         }
                     },
                     passwrd: {
                         validators: {
                             notEmpty: {
-                                message: 'The password is required'
+                                message: 'A password is required.'
                             },
                             different: {
                                 field: 'summoner',
-                                message: 'The password cannot be the same as username'
+                                message: 'Your password cannot be the same as your summoner name.'
                             },
                             stringLength: {
-                                min: 6,
-                                max: 18,
-                                message: 'The password must be more than 6 characterse long and less than 18 characters long'
+                                min: 7,
+                                max: 19,
+                                message: 'The password must be more than 6 characters long and less than 20 characters long.'
                             }
                         }
                     },
                     Dropdown: {
                         validators: {
                             notEmpty: {
-                                message: 'Rank is required'
+                                message: 'Your rank is required.'
                             }
                         }
                     },
                     "checkbox[]": {
                         validators: {
                             notEmpty: {
-                                message: 'Prefered Roles is required'
+                                message: 'You must select at least one role.'
                             }
                         }
                     },
                     availability: {
                         validators: {
                             notEmpty: {
-                                message: 'The Recieve Emails option is requried'
+                                message: 'You must select whether or not you wish to receive emails.'
                             }
                         }
                     },
                     description: {
                         validators: {
                             notEmpty: {
-                                message: 'The Description text filed is required'
+                                message: 'You must enter some preferred champions.'
                             }
                         }
                     }

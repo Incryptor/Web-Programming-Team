@@ -55,6 +55,7 @@
                         <li><a href="#Introduction">Introduction <span class="sr-only">(current)</span></a></li>
                         <li><a href="#ChampionSpotlight">Champion Spotlight</a></li>
                         <li><a href="#Champions">Champions</a></li>
+                        <li><a href="#Users">Users</a></li>
                         <li><a href="form.php">Form</a></li>
                         <li><a href="plots.php">Plots</a></li>
                     </ul>
@@ -238,6 +239,47 @@
 
             </tr>
         </table>
+
+
+
+        <div id="Users">
+            <div class="col-md-12">
+                <h1>Users:</h1>
+            </div>
+        </div>
+
+        <?php
+        $db = new mysqli('localhost', 'root', '', 'lab');
+
+        // You should see sucess if you can connect
+
+
+        // Query to return data from your database
+        $result = $db->query("SELECT * FROM sample");
+
+        // check if the query succeeded
+        if (!$result) {
+            die('There was an error running the query[' . $db->error . ']');
+        }
+
+        // Display the number of rows returned by query
+        echo 'Registered users: ' . $result->num_rows."<br/>";
+
+
+        // Display the results of the query for each row
+        echo "<table class=\"table table-hover\"><tr class=\"tablerowhead\"><td>Summoner</td><td>Rank</td><td>Preferred Roles</td><td>Preferred Champions</td></th>";
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr><td>'.$row['summoner'].'</td><td>'.$row['Dropdown'].'</td><td>'.$row['checkbox'].'</td><td>'.$row['description'].'</td></tr>';
+        }
+        echo "</table>";
+
+
+
+        // Close the database connection
+        $result->free();
+        $db->close();
+
+         ?>
 
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
