@@ -224,7 +224,7 @@
                             }
                         }
                     },
-                    checkbox: {
+                    "checkbox[]": {
                         validators: {
                             notEmpty: {
                                 message: 'Prefered Roles is required'
@@ -268,7 +268,7 @@
     // Insert sample data into the database
     $sql = $db->prepare("INSERT INTO sample(summoner, email, passwrd, Dropdown, checkbox, " .
                         "availability, description) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$checkboxstring = "";
+/*$checkboxstring = "";
 foreach ($POST_["checkbox"] as $key => $role) {
    if ($key =! (count($POST_["checkbox"])-1)) {
      $checkboxstring = $checkboxstring.$role.", ";
@@ -276,14 +276,14 @@ foreach ($POST_["checkbox"] as $key => $role) {
       $checkboxstring = $checkboxstring.$role;
    }
 
- };
+ };*/
 
     // These should be retrieved from POST variables
     $name = $_POST["summoner"];
     $email = $_POST["email"];
     $insecure_pass = $_POST["passwrd"]; // This password needs to be securely hashed
     $dropdown = $_POST["Dropdown"]; // This is one of the dropdown selection options
-    $checkbox = $POST_["checkbox"];  // This is a boolean value 0 or 1
+    $checkbox = implode(', ', $POST_['checkbox']);  // This is a boolean value 0 or 1
     $radio = $_POST["availability"];   // This is an integer value
     $message = $_POST["description"]; // The text area content
 
@@ -291,7 +291,7 @@ foreach ($POST_["checkbox"] as $key => $role) {
     $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
 
     // Bind the parameters to the SQL query above, s is a string i is an integer
-    $sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
+    $sql->bind_param("sssssis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
 
     // Execute the query, inserting the data
     $sql->execute();
