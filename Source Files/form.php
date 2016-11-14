@@ -109,19 +109,19 @@
                     <div class="col-sm-5">
                         <div class="checkbox">
                             <label>
-                <input type="checkbox" id="checkbox1" name="checkbox[]" value="top">Top&nbsp;
+                <input type="checkbox" id="checkbox1" name="checkbox[]" value="Top">Top&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox2" name="checkbox[]" value="jungle">Jungle&nbsp;
+                <input type="checkbox" id="checkbox2" name="checkbox[]" value="Jungle">Jungle&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox3" name="checkbox[]" value="mid">Mid&nbsp;
+                <input type="checkbox" id="checkbox3" name="checkbox[]" value="Mid">Mid&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox4" name="checkbox[]" value="bot">Bot&nbsp;
+                <input type="checkbox" id="checkbox4" name="checkbox[]" value="Bot">Bot&nbsp;
               </label>
                             <label>
-                <input type="checkbox" id="checkbox5" name="checkbox[]" value="support">Support
+                <input type="checkbox" id="checkbox5" name="checkbox[]" value="Support">Support
               </label>
                         </div>
                     </div>
@@ -283,7 +283,7 @@ foreach ($POST_["checkbox"] as $key => $role) {
     $email = $_POST["email"];
     $insecure_pass = $_POST["passwrd"]; // This password needs to be securely hashed
     $dropdown = $_POST["Dropdown"]; // This is one of the dropdown selection options
-    $checkbox = implode(', ', $POST_['checkbox']);  // This is a boolean value 0 or 1
+    $checkbox = implode(', ', $_POST['checkbox']);  // This is a boolean value 0 or 1
     $radio = $_POST["availability"];   // This is an integer value
     $message = $_POST["description"]; // The text area content
 

@@ -23,7 +23,7 @@ $name = "emeerte";
 $email = "jon@test.com";
 $insecure_pass = "test123"; // This password needs to be securely hashed
 $dropdown = "Option 1"; // This is one of the dropdown selection options
-$checkbox = 0;  // This is a boolean value 0 or 1
+$checkbox = "sfdfs";  // This is a boolean value 0 or 1
 $radio = 2;   // This is an integer value
 $message = "This is a sample message."; // The text area content
 
@@ -31,7 +31,7 @@ $message = "This is a sample message."; // The text area content
 $password = password_hash($insecure_pass, PASSWORD_DEFAULT);
 
 // Bind the parameters to the SQL query above, s is a string i is an integer
-$sql->bind_param("ssssiis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
+$sql->bind_param("sssssis", $name, $email, $password, $dropdown, $checkbox, $radio, $message);
 
 // Execute the query, inserting the data
 $sql->execute();
